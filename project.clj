@@ -5,4 +5,5 @@
             :url "http://www.eclipse.org/legal/epl-v10.html"}
   :dependencies [[org.clojure/clojure "1.6.0"]
                  [edu.uci.ics/crawler4j "3.5"]]
+  :aot [scraping-clj.crawler]
   :main scraping-clj.core)

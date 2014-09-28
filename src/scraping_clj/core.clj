@@ -18,4 +18,4 @@
   (def robotstxtServer (new RobotstxtServer robotstxtConfig pageFetcher))
   (def controller (new CrawlController config pageFetcher robotstxtServer))
   (.addSeed controller "http://ameblo.jp/takagakiayahi-blog/")
-  (.start controller ((.class scraping-clj.crawler) 1)))
+  (.start controller ((.class Crawler) 1)))
