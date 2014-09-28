@@ -1,8 +1,8 @@
 (ns scraping-clj.crawler
   (:import [java.io PrintWriter File]
            [edu.uci.ics.crawler4j.crawler Page WebCrawler]
-           [edu.uci.ics.crawler4j.url.WebURL]
-           [org.jsoup.Jsoup])
+           [edu.uci.ics.crawler4j.url WebURL]
+           [org.jsoup Jsoup])
   (:gen-class
    :name Crawler
    :main false
@@ -17,6 +17,7 @@
   (and (.startWith href "http://ameblo.jp/takagakiayahi-blog/entry") (.endWith href ".html")))
 
 (defn -visit [page]
+  (println page)
   (def url (-> page .getWebURL .getURL))
   (println url))
 
