@@ -2,9 +2,8 @@
   (:import (edu.uci.ics.crawler4j.crawler CrawlController CrawlConfig)
            (edu.uci.ics.crawler4j.fetcher.PageFetcher)
            (edu.uci.ics.crawler4j.robotstxt RobotstxtServer RobotstxtConfig)
-           )
-  (:require scraping-clj.crawler)
-  )
+           (scraping-clj.crawler Crawler)
+           ))
 
 (def crawlStorage "scrape")
 

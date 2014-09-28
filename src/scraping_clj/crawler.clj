@@ -6,7 +6,7 @@
   (:gen-class
    :name Crawler
    :main false
-   :extends [edu.uci.ics.crawler4j.crawler.WebCrawler]
+   :extends edu.uci.ics.crawler4j.crawler.WebCrawler
    ))
 
 (defn -shouldVisit [url]
