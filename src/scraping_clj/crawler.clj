@@ -9,11 +9,19 @@
    :extends edu.uci.ics.crawler4j.crawler.WebCrawler
    ))
 
+(declare shouldVisit visit write)
+
 (defn -shouldVisit [url]
+  (println url)
   (def href (-> url .getURL .toLowerCase))
-  (println href)
-  (and (.startWith("http://ameblo.jp/takagakiayahi-blog/entry")) (.endWith(".html"))))
+  (and (.startWith href "http://ameblo.jp/takagakiayahi-blog/entry") (.endWith href ".html")))
 
 (defn -visit [page]
   (def url (-> page .getWebURL .getURL))
   (println url))
+
+(defn write [title text]
+  (def writer (new PrintWriter (new File (str title ".txt"))))
+  (. writer write text)
+  (. writer close)
+  )
