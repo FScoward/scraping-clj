@@ -6,8 +6,8 @@
   (:gen-class
    :name Crawler
    :main false
-   :implements [edu.uci.ics.crawler4j.crawler.WebCrawler]
-   :exposes-methods {shouldVisit visit}))
+   :extends [edu.uci.ics.crawler4j.crawler.WebCrawler]
+   ))
 
 (defn -shouldVisit [url]
   (def href (-> url .getURL .toLowerCase))
@@ -15,5 +15,5 @@
   (and (.startWith("http://ameblo.jp/takagakiayahi-blog/entry")) (.endWith(".html"))))
 
 (defn -visit [page]
-  (println page)
-  (def url (-> page .getWebURL .getURL)))
+  (def url (-> page .getWebURL .getURL))
+  (println url))
