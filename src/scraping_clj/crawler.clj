@@ -10,11 +10,10 @@
    ))
 
 (defn -shouldVisit [this ^WebURL url]
-  (println "ぱろぱろー1")
   (def href (-> url .getURL .toLowerCase))
-  (println href)
-  (and (.startWith href "http://ameblo.jp/takagakiayahi-blog/entry") (.endWith href ".html")))
+  (and (.startsWith href "http://ameblo.jp/takagakiayahi-blog/entry") (.endsWith href ".html")))
 
 (defn -visit [this page]
   (println "ぱろぱろー2")
-  (def url (-> page .getWebURL .getURL)))
+  (def url (-> page .getWebURL .getURL))
+  (println url))
