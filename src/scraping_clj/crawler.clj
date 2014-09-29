@@ -4,12 +4,10 @@
            [edu.uci.ics.crawler4j.url WebURL]
            [org.jsoup Jsoup])
   (:gen-class
-   :name Crawler
+   :name scraping-clj.crawler.Crawler
    :main false
    :extends edu.uci.ics.crawler4j.crawler.WebCrawler
    ))
-
-(declare shouldVisit visit write)
 
 (defn -shouldVisit [url]
   (println "ぱろぱろー1")
@@ -19,9 +17,3 @@
 (defn -visit [^Page page]
   (println "ぱろぱろー2")
   (def url (-> page .getWebURL .getURL)))
-
-(defn write [title text]
-  (def writer (new PrintWriter (new File (str title ".txt"))))
-  (. writer write text)
-  (. writer close)
-  )
