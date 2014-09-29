@@ -4,7 +4,6 @@
            (edu.uci.ics.crawler4j.robotstxt RobotstxtServer RobotstxtConfig)
            (scraping-clj.crawler Crawler)))
 
-
 (def crawlStorage "scrape")
 
 (def config (new CrawlConfig))
