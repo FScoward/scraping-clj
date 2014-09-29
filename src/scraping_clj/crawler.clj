@@ -12,14 +12,13 @@
 (declare shouldVisit visit write)
 
 (defn -shouldVisit [url]
-  (println url)
+  (println "ぱろぱろー1")
   (def href (-> url .getURL .toLowerCase))
   (and (.startWith href "http://ameblo.jp/takagakiayahi-blog/entry") (.endWith href ".html")))
 
-(defn -visit [page]
-  (println page)
-  (def url (-> page .getWebURL .getURL))
-  (println url))
+(defn -visit [^Page page]
+  (println "ぱろぱろー2")
+  (def url (-> page .getWebURL .getURL)))
 
 (defn write [title text]
   (def writer (new PrintWriter (new File (str title ".txt"))))
